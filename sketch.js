@@ -63,10 +63,10 @@ function draw() {
   
   trex.collide(invisibleGround);
   
-  //spawn the clouds
+  //aparecer nubes
   spawnClouds();
   
-  //spawn obstacles on the ground
+  //aparecer obstáculos en el suelo
   spawnObstacles();
   
   drawSprites();
@@ -78,7 +78,7 @@ function spawnObstacles(){
    obstacle.velocityX = -6;
 
    
-    // //generate random obstacles
+    //generar obstáculos al azar
     var rand = Math.round(random(1,6));
     switch(rand) {
       case 1: obstacle.addImage(obstacle1);
@@ -96,7 +96,7 @@ function spawnObstacles(){
       default: break;
     }
    
-    //assign scale and lifetime to the obstacle           
+    //asignar escala y ciclo de vida al obstáculo            
     obstacle.scale = 0.5;
     obstacle.lifetime = 300;
  }
@@ -106,7 +106,7 @@ function spawnObstacles(){
 
 
 function spawnClouds() {
-  //write code here to spawn the clouds
+  //escribir aquí el código para aparecer las nubes
   if (frameCount % 60 === 0) {
     cloud = createSprite(600,100,40,10);
     cloud.y = Math.round(random(10,60));
@@ -114,10 +114,10 @@ function spawnClouds() {
     cloud.scale = 0.5;
     cloud.velocityX = -3;
     
-     //assign lifetime to the variable
+     //asignar ciclo de vida a la variable
     cloud.lifetime = 200;
     
-    //adjust the depth
+    //ajustar la profundidad
     cloud.depth = trex.depth;
     trex.depth = trex.depth + 1;
   }
